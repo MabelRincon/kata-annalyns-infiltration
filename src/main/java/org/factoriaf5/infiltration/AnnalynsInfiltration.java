@@ -3,7 +3,7 @@ package org.factoriaf5.infiltration;
 public class AnnalynsInfiltration {
 
     public static boolean canFastAttack(boolean knightIsAwake) {
-        // Implement method
+        return !knightIsAwake;
     }
 
     public static boolean canSpy(boolean knightIsAwake, boolean archerIsAwake, boolean prisonerIsAwake) {
