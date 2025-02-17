@@ -1,6 +1,5 @@
 package org.factoriaf5.infiltration;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -14,15 +13,18 @@ class AppTest {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         PrintStream originalOut = System.out;
         System.setOut(new PrintStream(outputStream));
+
         App.main(new String[] {});
+
         System.setOut(originalOut);
+
         String expectedOutput = """
                 Annalyn's Infiltration Test Cases:
-                canFastAttack: true
-                canSpy: true
-                canSignalPrisoner: false
-                canFreePrisoner: false
+                Can Fast-Attack? false
+                Can Spy? true
+                Can Signal Prisoners? false
+                Can Free Prisoners? false
                 """;
-                assertEquals(expectedOutput.replace("\r\n", "\n"), outputStream.toString().replace("\r\n", "\n"));
+        assertEquals(expectedOutput.replace("\r\n", "\n"), outputStream.toString().replace("\r\n", "\n"));
     }
 }
